@@ -175,3 +175,13 @@ function createTableResidents(residentData) {
         $(".modal-body tbody").append(tableRow);
     });  
 }
+
+//Activate paginating buttons
+$('.paginatingButtons .btn').click(function () {
+    var buttonValue= $(this).attr("value");
+    if (buttonValue === "previous") {
+        fetchJSONFile(previousPagePath, createTablePlanets);
+    } else {
+        fetchJSONFile(nextPagePath, createTablePlanets);
+    }
+});
