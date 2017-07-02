@@ -135,3 +135,43 @@ function createTablePlanets(tableData) {
         $("button[value='next']").show();
     }
 }
+
+//Create residents table for modal
+var tableHeadersResidents = {name:"Name",
+                             height:"Height",
+                             mass:"Mass",
+                             hair_color:"Hair color",
+                             skin_color:"Skin color",
+                             eye_color:"Eye color",
+                             birth_year: "Birth year",
+                             gender:"Gender"};
+
+function createTableResidents(residentData) {
+    tableRow = "<tr>";
+    for (selector in tableHeadersResidents) {
+        cellData = residentData[selector];
+        switch (selector) {
+            case "height":
+                if (cellData === "unknown") {
+                        tableRow += "<td>" + cellData + "</td>";
+                    } else {
+                        tableRow += "<td>" + (parseInt(cellData)) / 100 + " m" + "</td>";
+                    }
+                break;
+            case "mass":
+                 if (cellData === "unknown") {
+                        tableRow += "<td>" + cellData + "</td>";
+                    } else {
+                        tableRow += "<td>" + (parseInt(cellData)) + " kg" + "</td>";
+                    }
+                break;
+            default:
+                tableRow += "<td>" + cellData + "</td>";
+                break;
+        }   
+    }
+    tableRow += "</tr>";
+    $(document).ready(function() {
+        $(".modal-body tbody").append(tableRow);
+    });  
+}
