@@ -103,4 +103,5 @@ ENV/
 # TEMP folder
 /TEMP/*
 
-
+# Database access config data
+config.txt
