@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# TEMP folder
+/TEMP/*
+
+# Database access config data
+config.txt
