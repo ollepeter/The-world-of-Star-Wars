@@ -121,18 +121,20 @@ function createTablePlanets(tableData) {
             
         });
     });
-    //Set pagepath for pagination and hide/show pagination buttons
+    //Set pagepath for pagination and set disable for pagination buttons
     previousPagePath = tableData.previous;
     nextPagePath = tableData.next;
     if (previousPagePath === null) {
-        $("button[value='previous']").hide();
+        $("button[value='previous']").addClass("disabled");
     } else {
-        $("button[value='previous']").show();
+        $("button[value='previous']").removeClass("disabled");
+        $("button[value='previous']").addClass("active");
     }
     if (nextPagePath === null) {
-        $("button[value='next']").hide();
+        $("button[value='next']").addClass("disabled");
     } else {
-        $("button[value='next']").show();
+        $("button[value='next']").removeClass("disabled");
+        $("button[value='next']").addClass("active");
     }
 }
 
